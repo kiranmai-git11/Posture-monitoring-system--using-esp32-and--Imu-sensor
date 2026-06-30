@@ -274,27 +274,5 @@ This project is licensed under the MIT License.
 
 ---
 
-# 📷 Project Gallery
 
-## Circuit Diagram
-
-![Circuit Diagram](Images/circuit.jpeg)
-
-The circuit consists of an ESP32 microcontroller connected to an MPU6050 IMU sensor via I²C communication and a buzzer for real-time posture alerts.
-
----
-
-## Serial Monitor Output
-
-![Serial Monitor](Images/serial_monitor.jpeg)
-
-The Serial Monitor displays the gyroscope readings (GX, GY, GZ) along with the predicted posture class in real time.
-
----
-
-# 🎥 Project Demonstration
-
-A short demonstration of the working posture monitoring system is available below.
-
-➡️ [Watch Demo Video](Images/demo.mp4)
 
