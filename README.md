@@ -199,3 +199,75 @@ Open the Serial Monitor at **115200 baud rate**.
 Wear or position the IMU sensor correctly and monitor posture in real time.
 
 When an incorrect posture is detected, the buzzer will immediately alert the user.
+
+---
+
+# 📊 Results
+
+The developed system successfully detects different body postures in real time using gyroscope data from the MPU6050 sensor. The trained Decision Tree model accurately classifies the user's posture into one of the predefined categories.
+
+### Detected Postures
+
+| Posture | Alert |
+|----------|-------|
+| ✅ Normal | No |
+| ⬆️ Bending Forward | Yes |
+| ⬇️ Bending Backward | Yes |
+| ⬅️ Bending Left | Yes |
+| ➡️ Bending Right | Yes |
+| ↺ Twisting Left | Yes |
+| ↻ Twisting Right | Yes |
+
+When an incorrect posture is detected, the ESP32 activates the buzzer to provide immediate feedback to the user.
+
+---
+
+# 🎯 Applications
+
+- Smart wearable health devices
+- Student posture monitoring
+- Office workstation ergonomics
+- Healthcare and physiotherapy
+- Fitness and yoga training
+- Elderly posture assistance
+
+---
+
+# 🔮 Future Enhancements
+
+- Mobile application for live posture monitoring
+- Bluetooth/Wi-Fi notifications
+- Cloud-based posture analytics
+- OLED display integration
+- Rechargeable wearable design
+- Improved Machine Learning models with larger datasets
+- Long-term posture history tracking
+
+---
+
+# 👩‍💻 Project Team
+
+**Mini Project**
+
+- K. Kiranmai
+- K. Shravyanjali
+- P. Varshini
+- N. Akshitha
+
+Department of Electronics and Communication Engineering
+
+---
+
+# 🙏 Acknowledgements
+
+We sincerely thank our project guide and the Department of Electronics and Communication Engineering for their continuous support and valuable guidance throughout this mini project.
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+⭐ If you found this project useful, consider giving this repository a star!
