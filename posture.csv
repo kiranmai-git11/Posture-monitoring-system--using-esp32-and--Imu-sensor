@@ -1,0 +1,36 @@
+GX,GY,GZ,Posture
+-3000,500,-800,Normal
+-3100,520,-780,Normal
+-2900,480,-760,Normal
+-3050,510,-790,Normal
+-2950,500,-770,Normal
+5000,200,100,Bending Forward
+6000,300,150,Bending Forward
+5500,100,50,Bending Forward
+5200,0,0,Bending Forward
+5800,150,-50,Bending Forward
+-5000,200,100,Bending Backward
+-6000,300,150,Bending Backward
+-5500,100,50,Bending Backward
+-5200,0,0,Bending Backward
+-5800,150,-50,Bending Backward
+200,-5000,100,Bending Left
+300,-6000,150,Bending Left
+100,-5500,50,Bending Left
+0,-5200,0,Bending Left
+150,-5800,-50,Bending Left
+200,5000,100,Bending Right
+300,6000,150,Bending Right
+100,5500,50,Bending Right
+0,5200,0,Bending Right
+150,5800,-50,Bending Right
+100,200,5000,Twisting Right
+150,300,6000,Twisting Right
+50,100,5500,Twisting Right
+0,0,5200,Twisting Right
+-50,150,5800,Twisting Right
+100,200,-5000,Twisting Left
+150,300,-6000,Twisting Left
+50,100,-5500,Twisting Left
+0,0,-5200,Twisting Left
+-50,150,-5800,Twisting Left
