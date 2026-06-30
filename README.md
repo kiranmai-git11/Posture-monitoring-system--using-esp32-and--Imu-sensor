@@ -110,3 +110,92 @@ The machine learning model was developed using Python in Google Colab.
 - ⬇️ Bending Backward
 - ↺ Twisting Left
 - ↻ Twisting Right
+
+---
+
+# 📁 Project Structure
+
+```
+posture-monitoring-system-esp32/
+│
+├── Arduino_Code/
+│   ├── posture_monitor.ino
+│   └── posture_model.h
+│
+├── ML_Model/
+│   ├── posture_training.ipynb
+│   └── posture.csv
+│
+├── Images/
+│
+├── PPT/
+│   └── posture_presentation.pptx
+│
+└── README.md
+```
+
+---
+
+# 🚀 Getting Started
+
+## Prerequisites
+
+Before running this project, install:
+
+- Arduino IDE
+- ESP32 Board Package
+- Python 3.x
+- Google Colab (for model training)
+
+### Required Arduino Libraries
+
+- Wire
+- MPU6050
+- EloquentTinyML
+- micromlgen (used in Google Colab)
+
+---
+
+# 🔌 Hardware Connections
+
+| MPU6050 | ESP32 |
+|----------|-------|
+| VCC | 3.3V |
+| GND | GND |
+| SDA | GPIO21 |
+| SCL | GPIO22 |
+
+| Buzzer | ESP32 |
+|----------|-------|
+| Positive (+) | GPIO25 |
+| Negative (-) | GND |
+
+---
+
+# ▶️ How to Run
+
+### Step 1
+
+Train the Decision Tree model using the provided Google Colab notebook.
+
+### Step 2
+
+Generate the `posture_model.h` file using **micromlgen**.
+
+### Step 3
+
+Open the Arduino project in Arduino IDE.
+
+### Step 4
+
+Upload the code to the ESP32.
+
+### Step 5
+
+Open the Serial Monitor at **115200 baud rate**.
+
+### Step 6
+
+Wear or position the IMU sensor correctly and monitor posture in real time.
+
+When an incorrect posture is detected, the buzzer will immediately alert the user.
