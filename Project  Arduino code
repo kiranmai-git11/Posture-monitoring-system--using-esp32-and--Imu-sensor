@@ -1,0 +1,79 @@
+#include <Wire.h>
+#include <MPU6050.h>
+#include "posture_model.h"
+#define BUZZER_PIN 25
+MPU6050 mpu;
+Eloquent::ML::Port::DecisionTree model;
+void setup() {
+  Serial.begin(115200);
+  Wire.begin(21, 22);
+  pinMode(BUZZER_PIN, OUTPUT);
+  digitalWrite(BUZZER_PIN, LOW);
+  Serial.println("Initializing MPU6050...");
+  mpu.initialize();
+  if (mpu.testConnection()) {
+    Serial.println("MPU6050 Connected Successfully!");
+  } else {
+    Serial.println("Connection Failed!");
+    while (1);
+  }
+}
+void loop() {
+  int16_t gx, gy, gz;
+  // Read gyroscope values
+  mpu.getRotation(&gx, &gy, &gz);
+  // Prepare input for ML model
+  float input[3] = {gx, gy, gz};
+  // Get prediction
+  int result = model.predict(input);
+  // Print sensor values
+  Serial.print("GX: "); Serial.print(gx);
+  Serial.print(" | GY: "); Serial.print(gy);
+  Serial.print(" | GZ: "); Serial.print(gz);
+  Serial.print(" | Posture: ");
+  bool isWrongPosture = false;
+  // Mapping based on .h file
+  switch(result) {
+    case 0:
+      Serial.println("Bending Backward");
+      isWrongPosture = true;
+      break;
+    case 1:
+      Serial.println("Bending Forward");
+      isWrongPosture = true;
+      break;
+    case 2:
+      Serial.println("Bending Left");
+      isWrongPosture = true;
+      break;
+    case 3:
+      Serial.println("Bending Right");
+      isWrongPosture = true;
+      break;
+    case 4:
+      Serial.println("Normal");
+      isWrongPosture = false;
+      break;
+    case 5:
+      Serial.println("Twisting Left");
+      isWrongPosture = true;
+      break;
+    case 6:
+      Serial.println("Twisting Right");
+      isWrongPosture = true;
+      break;
+    default:
+      Serial.println("Unknown");
+      isWrongPosture = false;
+      break;
+  }
+  // Buzzer logic
+  if (isWrongPosture) {
+    digitalWrite(BUZZER_PIN, HIGH);  // Turn ON buzzer
+  } else {
+    digitalWrite(BUZZER_PIN, LOW);   // Turn OFF buzzer
+  }
+  Serial.println("---------------------------");
+  delay(500);
+}
+
